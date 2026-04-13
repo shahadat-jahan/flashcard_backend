@@ -40,6 +40,7 @@ class ServiceResult
     public function setError(string $message, ?int $code = null): void
     {
         $this->type = ResultType::ERROR;
+        $this->error = (object) [];
         $this->error->code = $code ?? Response::HTTP_BAD_REQUEST;
         $this->error->message = $message;
     }
